@@ -1,0 +1,12 @@
+<div fxFill fxLayout="column" fxLayoutAlign="start">
+    <o-grid #grid columns="ID;NAME;STOCK;PRICE;ACTIVE;DATE_ADDED" service="products" entity="product"
+        keys="ID" orderable="yes" quick-filter="yes" grid-item-height="2:2" sortable-columns="NAME;PRICE">
+        <o-grid-item *ngFor="let list of grid.dataArray">
+            <o-column layout-padding  class="container-item">
+                <h4> {{ list.NAME }} </h4>
+                <div> {{ list.STOCK }}</div>
+                <div> {{ list.PRICE }}</div>
+            </o-column>
+        </o-grid-item>
+    </o-grid>
+</div>

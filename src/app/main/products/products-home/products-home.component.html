@@ -1,0 +1,14 @@
+<div fxFill fxLayout="column" fxLayoutAlign="start">
+    <o-table attr="productsTable" service="products" entity="product" keys="ID" 
+      columns="ID;NAME;STOCK;PRICE;ACTIVE;DATE_ADDED"
+      visible-columns="NAME;STOCK;PRICE;ACTIVE;DATE_ADDED" query-rows="5">
+        <o-table-column attr="ACTIVE" title="ACTIVE">
+            <o-table-cell-renderer-boolean render-true-value="task_alt" render-false-value="cancel" render-type="icon"
+                boolean-type="boolean">
+            </o-table-cell-renderer-boolean>
+            <o-table-column attr="DATE_ADDED" title="DATE_ADDED" type="date"> </o-table-column>
+          </o-table-column>
+          <o-table-column attr="PRICE" title="PRICE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
+            currency-symbol-position="right"></o-table-column>
+    </o-table>
+</div>

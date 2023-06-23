@@ -1,0 +1,19 @@
+<o-form #form attr="products_detail" service="products" entity="product" fxLayout="column"
+  show-header="yes" header-actions="R;I;U;D" keys="ID" keys-sql-types="INTEGER"
+  show-header-navigation="yes">
+  <o-text-input attr="NAME" label="NAME"></o-text-input>
+  <o-text-input attr="STOCK" label="STOCK"></o-text-input>
+  <o-text-input attr="PRICE" label="PRICE"></o-text-input>
+  <o-date-input attr="DATE_ADDED" label="DATE_ADDED" format="L"
+    text-input-enabled="no" value-type="STRING" max={{maxDate}} sql-type="VARCHAR"></o-date-input>
+  <h3>{{ 'FILES' | oTranslate }}</h3>
+  <o-file-input #fileinput attr="FILE" label="UPLOAD_FILE" service="products" entity="upload" max-file-size="100000"
+    multiple="yes" max-num-files="5" split-upload="false"
+    [additional-data]="getFileData()" (onUpload)="onUploadFiles($event)" (onError)="onError($event)" ></o-file-input>
+  <o-table #filetable attr="productsFilesTable" service="products" entity="file" keys="ID" parent-keys="PRODUCT_ID:ID"
+    columns="ID;NAME" visible-columns="NAME;action" controls="no">
+    <o-table-column attr="action" width="64px">
+      <o-table-cell-renderer-action (onClick)="actionClick($event)" icon="download"></o-table-cell-renderer-action>
+    </o-table-column>
+  </o-table>
+</o-form>
