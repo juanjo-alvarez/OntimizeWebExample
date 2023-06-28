@@ -24,8 +24,9 @@
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
   "PRODUCTS": "Productos",
-  "PRODUCTSGRID": "Grid Productos",
+  "PRODUCTSGRID": "Grid de Productos",
   "HOMENEW": "Inicio Asociados",
   "FILES": "Ficheros",
-  "UPLOAD_FILE": "Subir Fichero"
+  "UPLOAD_FILE": "Subir Fichero",
+  "PRODUCTSCHART": "Gráfica de Productos"
 }
