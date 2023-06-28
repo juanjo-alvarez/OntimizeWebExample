@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ngx';
-import { OChartComponent, CandlestickChartConfiguration, DataAdapterUtils, LineChartConfiguration, DiscreteBarChartConfiguration, LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts';
+import { OChartComponent, DataAdapterUtils, DiscreteBarChartConfiguration } from 'ontimize-web-ngx-charts';
 import { D3LocaleService } from 'src/app/shared/d3-locale/d3Locale.service';
-import { D3Locales } from 'src/app/shared/d3-locale/locales';
 
 @Component({
   selector: 'app-products-chart',
@@ -39,9 +38,11 @@ export class ProductsChartComponent implements OnInit {
   }
    
   private _configureDiscreteBarChart(locale: any): void {
+    let colors:string[] = ['#1464a5','#4649A6','#41bf78','#363636','#006bdb']
     this.chartParameters = new DiscreteBarChartConfiguration();
     this.chartParameters.xAxis = "date";
     this.chartParameters.yAxis = ["value"];
+    this.chartParameters.color = colors;
     this.chartParameters.xDataType = d => locale.timeFormat('%b')(new Date(d));
   }
 }
