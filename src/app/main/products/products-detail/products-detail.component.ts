@@ -1,6 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, Injector, OnInit, ViewChild } from '@angular/core';
-import { DialogService, OFileInputComponent, OFormComponent, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
+import { Moment } from 'moment';
+import { DialogService, ODateInputComponent, OFileInputComponent, OFormComponent, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
 
 
 
@@ -13,10 +14,12 @@ export class ProductsDetailComponent implements OnInit {
 
   public maxDate: string;
   protected productService: OntimizeService;
+  public availableDates:Date[]=[];
 
   @ViewChild('form',{static:true}) form:OFormComponent;
   @ViewChild('filetable',{static:true}) fileTable:OTableComponent;
   @ViewChild('fileinput',{static:true}) fileInput:OFileInputComponent;
+  @ViewChild('filedate',{static:true}) fileDate:ODateInputComponent;
 
   constructor(protected dialogService: DialogService,public injector: Injector) {
     this.productService = this.injector.get(OntimizeService);
@@ -26,6 +29,9 @@ export class ProductsDetailComponent implements OnInit {
     this.maxDate = formatDate(Date.now(),'MM-dd-yyyy','en-US');
     const conf = this.productService.getDefaultServiceConfiguration('products');
     this.productService.configureService(conf);
+    this.availableDates.push(new Date("2023-07-08"+"T00:00:00Z")); 
+    this.availableDates.push(new Date("2023-07-09"+"T00:00:00Z")); 
+    this.availableDates.push(new Date("2023-07-10"+"T00:00:00Z")); 
   }
 
   getFileData(){
@@ -91,8 +97,13 @@ export class ProductsDetailComponent implements OnInit {
     }
   }
 
-
-
-
-  
+  filterAvailability(date: Moment):boolean{
+    let compDate: Date = date.toDate();
+    for(let availableDate of this.availableDates){
+      if(availableDate.toDateString() === compDate.toDateString()){
+        return false;
+      }
+    }
+    return true;
+  }
 }
