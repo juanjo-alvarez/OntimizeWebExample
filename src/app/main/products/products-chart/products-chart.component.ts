@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { OTranslateService } from 'ontimize-web-ngx';
 import { OChartComponent, DataAdapterUtils, DiscreteBarChartConfiguration } from 'ontimize-web-ngx-charts';
 import { D3LocaleService } from 'src/app/shared/d3-locale/d3Locale.service';
@@ -28,21 +29,33 @@ export class ProductsChartComponent implements OnInit {
     { "date": 1701432000000, "value": 5 }
   ];
     
-  constructor(private translateService: OTranslateService, private d3LocaleService:D3LocaleService) { }
+  constructor(private translateService: OTranslateService, private d3LocaleService:D3LocaleService, private router: Router) { 
+    this.translateService.onLanguageChanged.subscribe(() => this.reloadComponent());
+  }
 
   ngOnInit() {
-    const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
-    this._configureDiscreteBarChart(d3Locale);
+    this.configureLanguage();
     let dataAdapter = DataAdapterUtils.createDataAdapter(this.chartParameters);
     this.discretebar.setDataArray(dataAdapter.adaptResult(this.noTranslateData));
   }
-   
-  private _configureDiscreteBarChart(locale: any): void {
+
+  private configureLanguage(){
+    const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+    this.configureDiscreteBarChart(d3Locale);
+  }
+
+  private configureDiscreteBarChart(locale: any): void {
     let colors:string[] = ['#1464a5','#4649A6','#41bf78','#363636','#006bdb']
     this.chartParameters = new DiscreteBarChartConfiguration();
     this.chartParameters.xAxis = "date";
     this.chartParameters.yAxis = ["value"];
     this.chartParameters.color = colors;
     this.chartParameters.xDataType = d => locale.timeFormat('%b')(new Date(d));
+  }
+
+  reloadComponent() {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([this.router.url]);
   }
 }

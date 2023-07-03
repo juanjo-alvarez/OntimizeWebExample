@@ -14,7 +14,9 @@ export class D3LocaleService {
   ) { }
 
   public getD3LocaleConfiguration(): any {
-    return d3.locale(D3Locales[this.translateService.getCurrentLang().toUpperCase()]);
+    let lang = this.translateService.getCurrentLang().toUpperCase();
+    let localeData = D3Locales[lang]
+    return d3.locale(localeData);
   }
 
 }
