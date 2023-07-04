@@ -12,7 +12,7 @@ import { DialogService, ODateInputComponent, OFileInputComponent, OFormComponent
 })
 export class ProductsDetailComponent implements OnInit {
 
-  public maxDate: string;
+  public today: number;
   protected productService: OntimizeService;
   public availableDates:Date[]=[];
 
@@ -26,7 +26,7 @@ export class ProductsDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.maxDate = formatDate(Date.now(),'MM-dd-yyyy','en-US');
+    this.today = Date.now();
     const conf = this.productService.getDefaultServiceConfiguration('products');
     this.productService.configureService(conf);
     this.availableDates.push(new Date("2023-07-08"+"T00:00:00Z")); 

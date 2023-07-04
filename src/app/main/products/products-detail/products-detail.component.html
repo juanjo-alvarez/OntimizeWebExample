@@ -5,7 +5,7 @@
   <o-text-input attr="STOCK" label="STOCK"></o-text-input>
   <o-text-input attr="PRICE" label="PRICE"></o-text-input>
 
-  <o-date-input attr="DATE_ADDED" label="DATE_ADDED" format="L" text-input-enabled="no" [filter-date]="filterAvailability.bind(this)"></o-date-input>
+  <o-date-input attr="DATE_ADDED" label="DATE_ADDED" format="L" text-input-enabled="no" [filter-date]="filterAvailability.bind(this)" [min]="today"></o-date-input>
 
   <h3>{{ 'FILES' | oTranslate }}</h3>
   <o-file-input #fileinput attr="FILE" label="UPLOAD_FILE" service="products" entity="upload" max-file-size="100000"

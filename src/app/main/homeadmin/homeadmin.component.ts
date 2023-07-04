@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,6 +11,8 @@ export class HomeAdminComponent implements OnInit {
 
   public user:string;
   public role:string;
+  public maxDate: string;
+  public maxDateTIMESTAMP: number;
 
   constructor(
     private router: Router,
