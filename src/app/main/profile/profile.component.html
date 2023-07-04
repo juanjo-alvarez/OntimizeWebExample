@@ -1,0 +1,12 @@
+<o-form #form attr="profile_detail" service="users" entity="user" fxLayout="column"
+  show-header="yes" header-actions="R;U" keys="USER_" keys-sql-types="VARCHAR"
+  show-header-navigation="yes" >
+  <o-text-input attr="NAME" label="NAME"></o-text-input>
+  <o-text-input attr="SURNAME" label="SURNAME"></o-text-input>
+  <o-text-input attr="EMAIL" label="EMAIL"></o-text-input>
+  <o-text-input attr="NIF" label="NIF"></o-text-input>
+  <o-password-input attr="PASSWORD" label="PASSWORD"></o-password-input>
+  <o-slide-toggle attr="USERBLOCKED" label="USERBLOCKED" enabled="no"></o-slide-toggle>
+  <o-date-input attr="LASTPASSWORDUPDATE" label="LASTPASSWORDUPDATE" format="L"  enabled="no"></o-date-input>
+  <o-date-input attr="FIRSTLOGIN" label="FIRSTLOGIN" format="L" enabled="no"></o-date-input>
+</o-form>
