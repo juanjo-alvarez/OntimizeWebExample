@@ -10,7 +10,6 @@ import { AuthService, OFormComponent, OPasswordInputComponent } from 'ontimize-w
 export class ProfileComponent implements OnInit {
 
   @ViewChild('form',{static:true}) form:OFormComponent;
-  @ViewChild('pwdconf',{static:true}) pwdconf:OPasswordInputComponent;
 
   public validatorArray: ValidatorFn[] = [];
 
