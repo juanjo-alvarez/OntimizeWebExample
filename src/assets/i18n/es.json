@@ -4,6 +4,10 @@
   "EXAMPLE_LOGIN_INFO": "Usuario y contraseña de ejemplo",
   "USERNAME": "Usuario",
   "PASSWORD": "Contraseña",
+  "PASSWORDCONFIRM": "Confirma Contraseña",
+  "FIRSTLOGIN": "Ya ha iniciado sesión",
+  "LASTPASSWORDUPDATE": "Ultima actualización de la contraseña",
+  "USERBLOCKED": "Usuario bloqueado desde",
   "LOGIN": "Entrar",
   "LOGOUT": "Salir",
   "VIEW": "Vistas",
@@ -28,5 +32,6 @@
   "HOMENEW": "Inicio Asociados",
   "FILES": "Ficheros",
   "UPLOAD_FILE": "Subir Fichero",
-  "PRODUCTSCHART": "Gráfica de Productos"
+  "PRODUCTSCHART": "Gráfica de Productos",
+  "VALIDATOR_MUST_MATCH": "La contraseña debe coincidir"
 }

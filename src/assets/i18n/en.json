@@ -4,6 +4,10 @@
   "EXAMPLE_LOGIN_INFO": "Use this user and password for login",
   "USERNAME": "Username",
   "PASSWORD": "Password",
+  "PASSWORDCONFIRM": "Confirm Password",
+  "FIRSTLOGIN": "Are already logged in",
+  "LASTPASSWORDUPDATE": "Last password update",
+  "USERBLOCKED": "User blocked until",
   "LOGIN": "Login",
   "LOGOUT": "Logout",
   "VIEW": "Views",
@@ -28,5 +32,6 @@
   "HOMENEW": "Home partner",
   "FILES": "Files",
   "UPLOAD_FILE": "Upload File",
-  "PRODUCTSCHART": "Products Chart"
+  "PRODUCTSCHART": "Products Chart",
+  "VALIDATOR_MUST_MATCH": "The password must match"
 }

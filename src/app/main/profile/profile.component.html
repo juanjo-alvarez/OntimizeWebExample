@@ -1,12 +1,15 @@
 <o-form #form attr="profile_detail" service="users" entity="user" fxLayout="column"
   show-header="yes" header-actions="R;U" keys="USER_" keys-sql-types="VARCHAR"
-  show-header-navigation="yes" >
+  show-header-navigation="yes" (onDataLoaded)="formInit()">
   <o-text-input attr="NAME" label="NAME"></o-text-input>
   <o-text-input attr="SURNAME" label="SURNAME"></o-text-input>
   <o-text-input attr="EMAIL" label="EMAIL"></o-text-input>
   <o-text-input attr="NIF" label="NIF"></o-text-input>
-  <o-password-input attr="PASSWORD" label="PASSWORD"></o-password-input>
-  <o-slide-toggle attr="USERBLOCKED" label="USERBLOCKED" enabled="no"></o-slide-toggle>
+  <o-password-input attr="PASSWORD" label="PASSWORD" required="yes" (onChange)="reviewMatches($event)"></o-password-input>
+  <o-password-input attr="PASSWORDCONFIRM" label="PASSWORDCONFIRM"  [validators]="validatorArray">
+    <o-validator error-name="mustMatch" error-text="VALIDATOR_MUST_MATCH"></o-validator>
+  </o-password-input>
   <o-date-input attr="LASTPASSWORDUPDATE" label="LASTPASSWORDUPDATE" format="L"  enabled="no"></o-date-input>
-  <o-date-input attr="FIRSTLOGIN" label="FIRSTLOGIN" format="L" enabled="no"></o-date-input>
+  <o-date-input attr="USERBLOCKED" label="USERBLOCKED" format="L" enabled="no"></o-date-input>
+  <o-slide-toggle attr="FIRSTLOGIN" label="FIRSTLOGIN" enabled="no"></o-slide-toggle>
 </o-form>
