@@ -33,5 +33,10 @@
   "FILES": "Files",
   "UPLOAD_FILE": "Upload File",
   "PRODUCTSCHART": "Products Chart",
-  "VALIDATOR_MUST_MATCH": "The password must match"
+  "VALIDATOR_MUST_MATCH": "The password must match",
+  "PROCEDENCE": "Procedence",
+  "SPAIN": "Spain",
+  "NORWEGIAN": "Norway",
+  "EEUU": "Unit States",
+  "JAPAN": "Japan"
 }

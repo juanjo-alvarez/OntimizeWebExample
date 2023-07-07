@@ -33,5 +33,10 @@
   "FILES": "Ficheros",
   "UPLOAD_FILE": "Subir Fichero",
   "PRODUCTSCHART": "Gráfica de Productos",
-  "VALIDATOR_MUST_MATCH": "La contraseña debe coincidir"
+  "VALIDATOR_MUST_MATCH": "La contraseña debe coincidir",
+  "PROCEDENCE": "Origen",
+  "SPAIN": "España",
+  "NORWEGIAN": "Noruega",
+  "EEUU": "Estados Unidos",
+  "JAPAN": "Japón"
 }
